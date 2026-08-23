@@ -1,141 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The WebSwan</title>
     <style>
-        body {
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            /* Background color */
             background-color: #2895d4;
-            /* Background logo layout */
             background-image: url('https://d14tal8bchn59o.cloudfront.net/-696pBr9qonZ33hIBhissnKH8xlsnK3-cWKBVd__e4U/w:1920/plain/https://02f0a56ef46d93f03c90-22ac5f107621879d5667e0d7ed595bdb.ssl.cf2.rackcdn.com/sites/98993/photos/23391472/WSLogo-Photoroom_original.png');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             background-attachment: fixed;
-            /* Make sure background blends nicely */
             background-blend-mode: overlay;
-            
+
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
+            padding: 20px;
         }
 
         .container {
-            background: rgba(255, 255, 255, 0.9); 
-            padding: 40px;
+            background: rgba(255, 255, 255, 0.92);
+            padding: 40px 30px;
             border-radius: 20px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
             text-align: center;
-            max-width: 500px;
-            width: 90%;
-            /* This ensures padding is always included in the width */
-            box-sizing: border-box; 
+            max-width: 520px;
+            width: 100%;
         }
 
         .logo {
-            max-width: 250px;
-            margin-bottom: 20px;
+            max-width: 200px;
+            margin-bottom: 10px;
         }
 
         h1 {
             color: #2895d4;
-            margin-bottom: 30px;
-            font-size: 1.8em;
+            margin-bottom: 24px;
+            font-size: 1.8rem;
+            font-weight: 600;
+            letter-spacing: -0.5px;
         }
 
         .btn {
             display: block;
-            /* This centers the button horizontally */
-            margin-left: auto;
-            margin-right: auto;
             width: 100%;
-            padding: 15px 20px;
-            margin-top: 10px;
-            margin-bottom: 10px;
+            padding: 14px 18px;
+            margin: 8px 0;
             border: none;
-            border-radius: 8px;
-            font-size: 1em;
-            font-weight: bold;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
             cursor: pointer;
             text-decoration: none;
             text-align: center;
-            transition: all 0.3s ease;
-            color: white;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            /* Prevents buttons from stretching too wide on large screens */
-            box-sizing: border-box; 
+            color: #fff;
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+            letter-spacing: 0.3px;
         }
 
         .btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
         }
 
-        /* Different colors for visual distinction */
-        .btn-portfolio { background-color: #1e88e5; } /* Solid Blue for Portfolio */
-        .btn-growth { background-color: #ff9800; } /* Orange */
-        .btn-say { background-color: #9c27b0; } /* Purple */
-        .btn-ranking { background-color: #2895d4; }
-        .btn-yelp { background-color: #d32323; }
-        .btn-yahoo { background-color: #6001d2; }
-        .btn-google { background-color: #4285F4; }
-        .btn-submit { background-color: #0f9d58; }
-
+        /* ----- button colors ----- */
+        .btn-portfolio { background-color: #1e88e5; }
+        .btn-resume    { background-color: #0d47a1; }   /* deep navy for resume */
+        .btn-growth    { background-color: #ff9800; }
+        .btn-say       { background-color: #9c27b0; }
+        .btn-ranking   { background-color: #2895d4; }
+        .btn-yelp      { background-color: #d32323; }
+        .btn-yahoo     { background-color: #6001d2; }
+        .btn-google    { background-color: #4285f4; }
+        .btn-submit    { background-color: #0f9d58; }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <!-- Logo -->
-        <img src="https://d14tal8bchn59o.cloudfront.net/-696pBr9qonZ33hIBhissnKH8xlsnK3-cWKBVd__e4U/w:1920/plain/https://02f0a56ef46d93f03c90-22ac5f107621879d5667e0d7ed595bdb.ssl.cf2.rackcdn.com/sites/98993/photos/23391472/WSLogo-Photoroom_original.png" alt="The WebSwan Logo" class="logo">
-        <h1>The WebSwan</h1>
+<div class="container">
 
-        <!-- NEW Button: Portfolio -->
-        <a href="https://taniad2169.github.io/WebSwan-Portfolio/" target="_blank" class="btn btn-portfolio">
-            The WebSwan Portfolio
-        </a>
+    <!-- Logo -->
+    <img src="https://d14tal8bchn59o.cloudfront.net/-696pBr9qonZ33hIBhissnKH8xlsnK3-cWKBVd__e4U/w:1920/plain/https://02f0a56ef46d93f03c90-22ac5f107621879d5667e0d7ed595bdb.ssl.cf2.rackcdn.com/sites/98993/photos/23391472/WSLogo-Photoroom_original.png"
+         alt="The WebSwan Logo" class="logo" />
+    <h1>The WebSwan</h1>
 
-        <!-- Button: Growth -->
-        <a href="https://www.google.com/search?q=what+is+said+about+the+webswan&oq=what+is+said+about+the+webswan&gs_lcrp=EgZjaHJvbWUqBggAEEUYOzIGCAAQRRg7MgcIARAAGO8FMgoIAhAAGIAEGKIEMgcIAxAAGO8FMgcIBBAAGO8FMgcIBRAAGO8F0gEINjQ1MGowajSoAgOwAgHxBarx_ocZ4aeY&sourceid=chrome&source=chrome.ob&ie=UTF-8" target="_blank" class="btn btn-growth">
-            find out how the webswan can help your business grow
-        </a>
+    <!-- Portfolio -->
+    <a href="https://taniad2169.github.io/WebSwan-Portfolio/" target="_blank" class="btn btn-portfolio">
+        The WebSwan Portfolio
+    </a>
 
-        <!-- Button: What people say -->
-        <a href="https://www.google.com/search?q=what+are+people+saying+about+the+webswan&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIHCAEQIRiPAjIHCAIQIRiPAtIBCDgwNzdqMGo5qAIGsAIB8QWWtmlLcBosuw&sourceid=chrome&ie=UTF-8&fbs=ABfTbFVyMZGZf1hfvX9uKjN_-G8cqu7ocb7U6ah0xpkIrGMK4LpKPoHZrc4HVz9uOAATjT1g2XbMUNYTWk-OmYpiK--qLizoF5Vfe_ozYlUxaDSbKTolzeP6fvdnXhcHYbEdwKwihAtOtXaXzrJn9JYf6QZOMHnCuIavpvsLhpG8F5NaG9y1EUsfRjgcUxIQ_CGU2AvjDCda5s6nzrwZR_mb8S6R1JgOYg&aep=10&ntc=1&sxsrf=APpeQnssZJZ10CEV3f3mIwy0w-ZvXIEykA%3A1787467376086&mstk=AUtExfC2wrv-GsR3xGy-kHufFOKydSPrT52oEv7IvrFhkYRrUiynoroSm3sSaL_PbUBs9coSZ5RWI4yKEPvHCxQk82HSUwq2477_J8ns8py3ftSB7SL_KpU958rOl_HIdfcdm7dCVWeAmU6ZSp972J00NUf3Z5z4g01hEgTzA0cxTbSC9gBmPXbHHFSylbeSgnLzOEGH-qJmemx4mWoOFJqAnTDhoO7fumoOA1i9TMwgfVLXFUIlRM9loeewQSHDMijuNpGx1PNIWg7_-7BdFOO7qab_W--2WvQKuMWFetW0rLoFb39wSmBAy_WBo0sN6sTtYc0aLxHG5AEgH7o8jqAv-59nK_TlBoOTEWfteCgKVbDhueEaoy2fRWB2zL6ve4VdYku896V3li6uWTu5Wi1evynXAqRNXs181K0VBYwVy_2GvNtXV1fGdpIJ2hCnAwDEJbJCEmUpjgQ&aioh=3&csuir=1&cs=0&udm=50&atvm=2&mtid=dpaKau2XOoOx0PEPh9e76Ak" target="_blank" class="btn btn-say">
-            what people say about The WebSwan
-        </a>
+    <!-- 🆕 RESUME BUTTON (points to your local PDF) -->
+    <a href="file:///C:/Users/tania/Downloads/Tania%20Domingue%20%E2%80%94%20Resume.pdf" target="_blank" class="btn btn-resume">
+        📄 Tania Domingue Resume
+    </a>
 
-        <!-- Button 1 -->
-        <a href="https://www.designrush.com/agency/website-design-development/california/oakland" target="_blank" class="btn btn-ranking">
-            click here to view the top 20 web agencies ranking in california The WebSwan #2
-        </a>
+    <!-- Growth -->
+    <a href="https://www.google.com/search?q=what+is+said+about+the+webswan&oq=what+is+said+about+the+webswan&gs_lcrp=EgZjaHJvbWUqBggAEEUYOzIGCAAQRRg7MgcIARAAGO8FMgoIAhAAGIAEGKIEMgcIAxAAGO8FMgcIBBAAGO8FMgcIBRAAGO8F0gEINjQ1MGowajSoAgOwAgHxBarx_ocZ4aeY&sourceid=chrome&source=chrome.ob&ie=UTF-8"
+       target="_blank" class="btn btn-growth">
+        find out how the webswan can help your business grow
+    </a>
 
-        <!-- Button 2 -->
-        <a href="https://www.yelp.com/biz/the-webswan-emeryville" target="_blank" class="btn btn-yelp">
-            The WebSwan Yelp Review
-        </a>
+    <!-- What people say -->
+    <a href="https://www.google.com/search?q=what+are+people+saying+about+the+webswan&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIHCAEQIRiPAjIHCAIQIRiPAtIBCDgwNzdqMGo5qAIGsAIB8QWWtmlLcBosuw&sourceid=chrome&ie=UTF-8&fbs=ABfTbFVyMZGZf1hfvX9uKjN_-G8cqu7ocb7U6ah0xpkIrGMK4LpKPoHZrc4HVz9uOAATjT1g2XbMUNYTWk-OmYpiK--qLizoF5Vfe_ozYlUxaDSbKTolzeP6fvdnXhcHYbEdwKwihAtOtXaXzrJn9JYf6QZOMHnCuIavpvsLhpG8F5NaG9y1EUsfRjgcUxIQ_CGU2AvjDCda5s6nzrwZR_mb8S6R1JgOYg&aep=10&ntc=1&sxsrf=APpeQnssZJZ10CEV3f3mIwy0w-ZvXIEykA%3A1787467376086&mstk=AUtExfC2wrv-GsR3xGy-kHufFOKydSPrT52oEv7IvrFhkYRrUiynoroSm3sSaL_PbUBs9coSZ5RWI4yKEPvHCxQk82HSUwq2477_J8ns8py3ftSB7SL_KpU958rOl_HIdfcdm7dCVWeAmU6ZSp972J00NUf3Z5z4g01hEgTzA0cxTbSC9gBmPXbHHFSylbeSgnLzOEGH-qJmemx4mWoOFJqAnTDhoO7fumoOA1i9TMwgfVLXFUIlRM9loeewQSHDMijuNpGx1PNIWg7_-7BdFOO7qab_W--2WvQKuMWFetW0rLoFb39wSmBAy_WBo0sN6sTtYc0aLxHG5AEgH7o8jqAv-59nK_TlBoOTEWfteCgKVbDhueEaoy2fRWB2zL6ve4VdYku896V3li6uWTu5Wi1evynXAqRNXs181K0VBYwVy_2GvNtXV1fGdpIJ2hCnAwDEJbJCEmUpjgQ&aioh=3&csuir=1&cs=0&udm=50&atvm=2&mtid=dpaKau2XOoOx0PEPh9e76Ak"
+       target="_blank" class="btn btn-say">
+        what people say about The WebSwan
+    </a>
 
-        <!-- Button 3 -->
-        <a href="https://local.yahoo.com/info-237436073-the-webswan-emeryville/" target="_blank" class="btn btn-yahoo">
-            The WebSwan Yahoo review
-        </a>
+    <!-- Ranking -->
+    <a href="https://www.designrush.com/agency/website-design-development/california/oakland" target="_blank" class="btn btn-ranking">
+        click here to view the top 20 web agencies ranking in california The WebSwan #2
+    </a>
 
-        <!-- Button 4 -->
-        <a href="https://www.google.com/maps/place//@32.352505,-100.0209822,4z/data=!3m1!4b1!4m3!3m2!1s0xa2370697717bde97:0xe12746ae08472f10!12e1?entry=ttu&g_ep=EgoyMDI2MDgxOS4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn btn-google">
-            The WebSwan Google Review
-        </a>
+    <!-- Yelp -->
+    <a href="https://www.yelp.com/biz/the-webswan-emeryville" target="_blank" class="btn btn-yelp">
+        The WebSwan Yelp Review
+    </a>
 
-        <!-- Button 5 -->
-        <a href="https://taniad2169.github.io/WebSWan-Review/" target="_blank" class="btn btn-submit">
-            click here to submit your review
-        </a>
-    </div>
+    <!-- Yahoo -->
+    <a href="https://local.yahoo.com/info-237436073-the-webswan-emeryville/" target="_blank" class="btn btn-yahoo">
+        The WebSwan Yahoo review
+    </a>
+
+    <!-- Google -->
+    <a href="https://www.google.com/maps/place//@32.352505,-100.0209822,4z/data=!3m1!4b1!4m3!3m2!1s0xa2370697717bde97:0xe12746ae08472f10!12e1?entry=ttu&g_ep=EgoyMDI2MDgxOS4wIKXMDSoASAFQAw%3D%3D"
+       target="_blank" class="btn btn-google">
+        The WebSwan Google Review
+    </a>
+
+    <!-- Submit review -->
+    <a href="https://taniad2169.github.io/WebSWan-Review/" target="_blank" class="btn btn-submit">
+        click here to submit your review
+    </a>
+
+</div>
 
 </body>
 </html>
