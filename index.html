@@ -34,7 +34,7 @@
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
             text-align: center;
-            max-width: 520px;
+            max-width: 600px;
             width: 100%;
         }
 
@@ -49,6 +49,15 @@
             font-size: 1.8rem;
             font-weight: 600;
             letter-spacing: -0.5px;
+        }
+
+        h2 {
+            color: #2895d4;
+            margin: 30px 0 20px 0;
+            font-size: 1.4rem;
+            font-weight: 600;
+            border-top: 2px solid #e0e0e0;
+            padding-top: 25px;
         }
 
         .btn {
@@ -74,7 +83,6 @@
             box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
         }
 
-        /* ----- button colors ----- */
         .btn-portfolio { background-color: #1e88e5; }
         .btn-growth    { background-color: #ff9800; }
         .btn-say       { background-color: #9c27b0; }
@@ -83,6 +91,97 @@
         .btn-yahoo     { background-color: #6001d2; }
         .btn-google    { background-color: #4285f4; }
         .btn-submit    { background-color: #0f9d58; }
+        .btn-compliance { background-color: #e91e63; }
+        .btn-resume-footer { background-color: #0d47a1; }
+
+        /* ----- Form Styles ----- */
+        .form-group {
+            margin-bottom: 18px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 5px;
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 14px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.3s ease;
+            background: #fff;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #2895d4;
+            box-shadow: 0 0 0 3px rgba(40, 149, 212, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .form-group select {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23333' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 12px center;
+            padding-right: 35px;
+        }
+
+        .btn-form-submit {
+            background-color: #0f9d58;
+            width: 100%;
+            padding: 14px 18px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-align: center;
+            color: #fff;
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+            letter-spacing: 0.3px;
+        }
+
+        .btn-form-submit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+            background-color: #0b7a45;
+        }
+
+        .btn-form-submit:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none !important;
+        }
+
+        .form-footer {
+            margin-top: 20px;
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        .footer-divider {
+            margin: 30px 0 20px 0;
+            border-top: 2px solid #e0e0e0;
+        }
     </style>
 </head>
 <body>
@@ -137,7 +236,125 @@
         click here to submit your review
     </a>
 
+    <!-- Compliance Button (NEW) -->
+    <a href="https://taniad2169.github.io/WebSwan-Compliance-English-Spanish-Ad-Campaign/" target="_blank" class="btn btn-compliance">
+        🔍 Check Your Website State Compliance Here
+    </a>
+
+    <!-- ===== CONTACT FORM ===== -->
+    <h2>📋 Request Your Free Consultation</h2>
+
+    <form action="https://formspree.io/f/xeajwvbo" method="POST">
+        
+        <div class="form-group">
+            <label for="name">Full Name *</label>
+            <input type="text" id="name" name="name" required placeholder="Your full name" />
+        </div>
+
+        <div class="form-group">
+            <label for="business">Business Name</label>
+            <input type="text" id="business" name="business" placeholder="Your business name" />
+        </div>
+
+        <div class="form-group">
+            <label for="phone">Phone Number *</label>
+            <input type="tel" id="phone" name="phone" required placeholder="(123) 456-7890" />
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" required placeholder="you@example.com" />
+        </div>
+
+        <div class="form-group">
+            <label for="service">Select a Service</label>
+            <select id="service" name="service">
+                <option value="">-- Please choose a service --</option>
+                <option value="complimentary-web-analysis">Complimentary Web Analysis</option>
+                <option value="complimentary-demo-landing-page">Complimentary Demo Landing Page for Lead Generation</option>
+                <option value="custom-phone-application">Custom Phone Application</option>
+                <option value="virtual-receptionist">Virtual Receptionist</option>
+                <option value="social-media-management">Social Media Management</option>
+                <option value="complimentary-website-state-compliance-audit">Complimentary Website State Compliance Audit</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="message">Additional Details</label>
+            <textarea id="message" name="message" placeholder="Tell us more about what you're looking for..."></textarea>
+        </div>
+
+        <!-- Hidden field to prevent spam (optional but recommended) -->
+        <input type="text" name="_gotcha" style="display:none" />
+
+        <button type="submit" class="btn-form-submit">📤 Submit Request</button>
+        
+        <div class="form-footer">
+            We'll get back to you within 24 hours. Your information is safe with us.
+        </div>
+    </form>
+
+    <!-- ===== FOOTER ===== -->
+    <div class="footer-divider"></div>
+
+    <!-- Resume Button at Footer -->
+    <a href="file:///C:/Users/tania/Downloads/Tania%20Domingue%20%E2%80%94%20Resume.pdf" target="_blank" class="btn btn-resume-footer">
+        📄 My Resume
+    </a>
+
 </div>
+
+<!-- ===== FORMSPREE AJAX INTEGRATION ===== -->
+<script>
+    // This adds AJAX functionality to your form for a smoother experience
+    (function() {
+        const form = document.querySelector('form[action="https://formspree.io/f/xeajwvbo"]');
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalBtnText = submitBtn.textContent;
+
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // Disable button and show loading state
+            submitBtn.disabled = true;
+            submitBtn.textContent = '⏳ Sending...';
+            
+            const formData = new FormData(form);
+            
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    // Success!
+                    form.innerHTML = `
+                        <div style="text-align: center; padding: 30px 20px;">
+                            <h2 style="color: #0f9d58; font-size: 1.8rem;">✅ Thank You!</h2>
+                            <p style="font-size: 1.1rem; margin-top: 15px; color: #333;">
+                                Your message has been sent successfully.<br>
+                                We'll get back to you within 24 hours.
+                            </p>
+                            <p style="margin-top: 20px; color: #666;">
+                                🦢 — The WebSwan Team
+                            </p>
+                        </div>
+                    `;
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            } catch (error) {
+                alert('Oops! Something went wrong. Please try again or email us directly at designs@thewebswan.com');
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalBtnText;
+            }
+        });
+    })();
+</script>
 
 </body>
 </html>
