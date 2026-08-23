@@ -27,13 +27,15 @@
         }
 
         .container {
-            background: rgba(255, 255, 255, 0.9); /* Slightly transparent white box so buttons are visible */
+            background: rgba(255, 255, 255, 0.9); 
             padding: 40px;
             border-radius: 20px;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
             text-align: center;
             max-width: 500px;
             width: 90%;
+            /* This ensures padding is always included in the width */
+            box-sizing: border-box; 
         }
 
         .logo {
@@ -49,9 +51,13 @@
 
         .btn {
             display: block;
+            /* This centers the button horizontally */
+            margin-left: auto;
+            margin-right: auto;
             width: 100%;
             padding: 15px 20px;
-            margin: 10px 0;
+            margin-top: 10px;
+            margin-bottom: 10px;
             border: none;
             border-radius: 8px;
             font-size: 1em;
@@ -62,6 +68,8 @@
             transition: all 0.3s ease;
             color: white;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            /* Prevents buttons from stretching too wide on large screens */
+            box-sizing: border-box; 
         }
 
         .btn:hover {
@@ -70,6 +78,7 @@
         }
 
         /* Different colors for visual distinction */
+        .btn-portfolio { background-color: #1e88e5; } /* Solid Blue for Portfolio */
         .btn-growth { background-color: #ff9800; } /* Orange */
         .btn-say { background-color: #9c27b0; } /* Purple */
         .btn-ranking { background-color: #2895d4; }
@@ -86,6 +95,11 @@
         <!-- Logo -->
         <img src="https://d14tal8bchn59o.cloudfront.net/-696pBr9qonZ33hIBhissnKH8xlsnK3-cWKBVd__e4U/w:1920/plain/https://02f0a56ef46d93f03c90-22ac5f107621879d5667e0d7ed595bdb.ssl.cf2.rackcdn.com/sites/98993/photos/23391472/WSLogo-Photoroom_original.png" alt="The WebSwan Logo" class="logo">
         <h1>The WebSwan</h1>
+
+        <!-- NEW Button: Portfolio -->
+        <a href="https://taniad2169.github.io/WebSwan-Portfolio/" target="_blank" class="btn btn-portfolio">
+            The WebSwan Portfolio
+        </a>
 
         <!-- Button: Growth -->
         <a href="https://www.google.com/search?q=what+is+said+about+the+webswan&oq=what+is+said+about+the+webswan&gs_lcrp=EgZjaHJvbWUqBggAEEUYOzIGCAAQRRg7MgcIARAAGO8FMgoIAhAAGIAEGKIEMgcIAxAAGO8FMgcIBBAAGO8FMgcIBRAAGO8F0gEINjQ1MGowajSoAgOwAgHxBarx_ocZ4aeY&sourceid=chrome&source=chrome.ob&ie=UTF-8" target="_blank" class="btn btn-growth">
