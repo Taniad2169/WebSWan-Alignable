@@ -1,4 +1,4 @@
-h<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
@@ -11,6 +11,11 @@ h<!DOCTYPE html>
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+            overflow-y: scroll; /* Forces scrollbar to always show so content doesn't shift */
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #2895d4;
@@ -20,51 +25,55 @@ h<!DOCTYPE html>
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-blend-mode: overlay;
-
+            min-height: 100vh;
+            padding-top: 350px;
+            padding-bottom: 50px;
+            padding-left: 20px;
+            padding-right: 20px;
             display: flex;
             justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
+            align-items: flex-start;
         }
 
         .container {
-            background: rgba(255, 255, 255, 0.92);
-            padding: 40px 30px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px 35px;
             border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             text-align: center;
-            max-width: 600px;
+            max-width: 620px;
             width: 100%;
+            margin: 0 auto;
+            position: relative;
         }
 
         .logo {
-            max-width: 200px;
+            max-width: 180px;
             margin-bottom: 10px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         h1 {
             color: #2895d4;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
             font-size: 1.8rem;
-            font-weight: 600;
-            letter-spacing: -0.5px;
         }
 
         h2 {
             color: #2895d4;
-            margin: 30px 0 20px 0;
+            margin: 25px 0 18px 0;
             font-size: 1.4rem;
-            font-weight: 600;
-            border-top: 2px solid #e0e0e0;
-            padding-top: 25px;
+            border-top: 2px solid #e8e8e8;
+            padding-top: 22px;
         }
 
-        .btn {
-            display: block;
-            width: 100%;
+        .btn-scroll-form {
+            background: linear-gradient(135deg, #2895d4, #1a6b9e);
+            color: white;
             padding: 14px 18px;
-            margin: 8px 0;
+            margin: 10px 0 8px 0;
             border: none;
             border-radius: 10px;
             font-size: 1rem;
@@ -72,10 +81,33 @@ h<!DOCTYPE html>
             cursor: pointer;
             text-decoration: none;
             text-align: center;
+            display: block;
+            width: 100%;
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .btn-scroll-form:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+            background: linear-gradient(135deg, #1a6b9e, #0f4a6e);
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 13px 16px;
+            margin: 7px 0;
+            border: none;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
             color: #fff;
             transition: all 0.25s ease;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
-            letter-spacing: 0.3px;
         }
 
         .btn:hover {
@@ -92,11 +124,9 @@ h<!DOCTYPE html>
         .btn-google    { background-color: #4285f4; }
         .btn-submit    { background-color: #0f9d58; }
         .btn-compliance { background-color: #e91e63; }
-        .btn-resume-footer { background-color: #0d47a1; }
 
-        /* ----- Form Styles ----- */
         .form-group {
-            margin-bottom: 18px;
+            margin-bottom: 16px;
             text-align: left;
         }
 
@@ -104,18 +134,18 @@ h<!DOCTYPE html>
             display: block;
             font-weight: 600;
             color: #333;
-            margin-bottom: 5px;
-            font-size: 0.95rem;
+            margin-bottom: 4px;
+            font-size: 0.9rem;
         }
 
         .form-group input,
         .form-group select,
         .form-group textarea {
             width: 100%;
-            padding: 12px 14px;
+            padding: 11px 14px;
             border: 2px solid #ddd;
             border-radius: 8px;
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-family: inherit;
             transition: border-color 0.3s ease;
             background: #fff;
@@ -131,7 +161,7 @@ h<!DOCTYPE html>
 
         .form-group textarea {
             resize: vertical;
-            min-height: 80px;
+            min-height: 70px;
         }
 
         .form-group select {
@@ -147,7 +177,7 @@ h<!DOCTYPE html>
             background-color: #0f9d58;
             width: 100%;
             padding: 14px 18px;
-            margin-top: 10px;
+            margin-top: 8px;
             border: none;
             border-radius: 10px;
             font-size: 1rem;
@@ -157,7 +187,6 @@ h<!DOCTYPE html>
             color: #fff;
             transition: all 0.25s ease;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
-            letter-spacing: 0.3px;
         }
 
         .btn-form-submit:hover {
@@ -173,14 +202,70 @@ h<!DOCTYPE html>
         }
 
         .form-footer {
-            margin-top: 20px;
-            font-size: 0.85rem;
+            margin-top: 16px;
+            font-size: 0.8rem;
             color: #666;
         }
 
         .footer-divider {
-            margin: 30px 0 20px 0;
-            border-top: 2px solid #e0e0e0;
+            margin: 25px 0 5px 0;
+            border-top: 2px solid #e8e8e8;
+        }
+
+        /* Hide scrollbar but keep scrolling */
+        .container::-webkit-scrollbar {
+            display: none;
+        }
+
+        @media (max-width: 1024px) {
+            body {
+                padding-top: 320px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding-top: 280px;
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+            .container {
+                padding: 30px 20px;
+            }
+            .logo {
+                max-width: 150px;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+            h2 {
+                font-size: 1.2rem;
+            }
+            .btn {
+                font-size: 0.85rem;
+                padding: 12px 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding-top: 250px;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+            .container {
+                padding: 20px 15px;
+                border-radius: 15px;
+            }
+            .logo {
+                max-width: 120px;
+            }
+            h1 {
+                font-size: 1.3rem;
+            }
+            h2 {
+                font-size: 1.1rem;
+            }
         }
     </style>
 </head>
@@ -188,131 +273,121 @@ h<!DOCTYPE html>
 
 <div class="container">
 
-    <!-- Logo -->
     <img src="https://d14tal8bchn59o.cloudfront.net/-696pBr9qonZ33hIBhissnKH8xlsnK3-cWKBVd__e4U/w:1920/plain/https://02f0a56ef46d93f03c90-22ac5f107621879d5667e0d7ed595bdb.ssl.cf2.rackcdn.com/sites/98993/photos/23391472/WSLogo-Photoroom_original.png"
          alt="The WebSwan Logo" class="logo" />
     <h1>The WebSwan</h1>
 
-    <!-- Portfolio -->
     <a href="https://taniad2169.github.io/WebSwan-Portfolio/" target="_blank" class="btn btn-portfolio">
         The WebSwan Portfolio
     </a>
 
-    <!-- Growth -->
     <a href="https://www.google.com/search?q=what+is+said+about+the+webswan&oq=what+is+said+about+the+webswan&gs_lcrp=EgZjaHJvbWUqBggAEEUYOzIGCAAQRRg7MgcIARAAGO8FMgoIAhAAGIAEGKIEMgcIAxAAGO8FMgcIBBAAGO8FMgcIBRAAGO8F0gEINjQ1MGowajSoAgOwAgHxBarx_ocZ4aeY&sourceid=chrome&source=chrome.ob&ie=UTF-8"
        target="_blank" class="btn btn-growth">
         find out how the webswan can help your business grow
     </a>
 
-    <!-- What people say -->
     <a href="https://www.google.com/search?q=what+are+people+saying+about+the+webswan&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIHCAEQIRiPAjIHCAIQIRiPAtIBCDgwNzdqMGo5qAIGsAIB8QWWtmlLcBosuw&sourceid=chrome&ie=UTF-8&fbs=ABfTbFVyMZGZf1hfvX9uKjN_-G8cqu7ocb7U6ah0xpkIrGMK4LpKPoHZrc4HVz9uOAATjT1g2XbMUNYTWk-OmYpiK--qLizoF5Vfe_ozYlUxaDSbKTolzeP6fvdnXhcHYbEdwKwihAtOtXaXzrJn9JYf6QZOMHnCuIavpvsLhpG8F5NaG9y1EUsfRjgcUxIQ_CGU2AvjDCda5s6nzrwZR_mb8S6R1JgOYg&aep=10&ntc=1&sxsrf=APpeQnssZJZ10CEV3f3mIwy0w-ZvXIEykA%3A1787467376086&mstk=AUtExfC2wrv-GsR3xGy-kHufFOKydSPrT52oEv7IvrFhkYRrUiynoroSm3sSaL_PbUBs9coSZ5RWI4yKEPvHCxQk82HSUwq2477_J8ns8py3ftSB7SL_KpU958rOl_HIdfcdm7dCVWeAmU6ZSp972J00NUf3Z5z4g01hEgTzA0cxTbSC9gBmPXbHHFSylbeSgnLzOEGH-qJmemx4mWoOFJqAnTDhoO7fumoOA1i9TMwgfVLXFUIlRM9loeewQSHDMijuNpGx1PNIWg7_-7BdFOO7qab_W--2WvQKuMWFetW0rLoFb39wSmBAy_WBo0sN6sTtYc0aLxHG5AEgH7o8jqAv-59nK_TlBoOTEWfteCgKVbDhueEaoy2fRWB2zL6ve4VdYku896V3li6uWTu5Wi1evynXAqRNXs181K0VBYwVy_2GvNtXV1fGdpIJ2hCnAwDEJbJCEmUpjgQ&aioh=3&csuir=1&cs=0&udm=50&atvm=2&mtid=dpaKau2XOoOx0PEPh9e76Ak"
        target="_blank" class="btn btn-say">
         what people say about The WebSwan
     </a>
 
-    <!-- Ranking -->
     <a href="https://www.designrush.com/agency/website-design-development/california/oakland" target="_blank" class="btn btn-ranking">
         click here to view the top 20 web agencies ranking in california The WebSwan #2
     </a>
 
-    <!-- Yelp -->
     <a href="https://www.yelp.com/biz/the-webswan-emeryville" target="_blank" class="btn btn-yelp">
         The WebSwan Yelp Review
     </a>
 
-    <!-- Yahoo -->
     <a href="https://local.yahoo.com/info-237436073-the-webswan-emeryville/" target="_blank" class="btn btn-yahoo">
         The WebSwan Yahoo review
     </a>
 
-    <!-- Google -->
     <a href="https://www.google.com/maps/place//@32.352505,-100.0209822,4z/data=!3m1!4b1!4m3!3m2!1s0xa2370697717bde97:0xe12746ae08472f10!12e1?entry=ttu&g_ep=EgoyMDI2MDgxOS4wIKXMDSoASAFQAw%3D%3D"
        target="_blank" class="btn btn-google">
         The WebSwan Google Review
     </a>
 
-    <!-- Submit review -->
     <a href="https://taniad2169.github.io/WebSWan-Review/" target="_blank" class="btn btn-submit">
         click here to submit your review
     </a>
 
-    <!-- Compliance Button (NEW) -->
     <a href="https://taniad2169.github.io/WebSwan-Compliance-English-Spanish-Ad-Campaign/" target="_blank" class="btn btn-compliance">
         🔍 Check Your Website State Compliance Here
     </a>
 
-    <!-- ===== CONTACT FORM ===== -->
-    <h2>📋 Request Your Free Consultation</h2>
+    <a href="#form-heading" class="btn-scroll-form">
+        📝 Request Your Free Consultation
+    </a>
 
-    <form action="https://formspree.io/f/xeajwvbo" method="POST">
-        
-        <div class="form-group">
-            <label for="name">Full Name *</label>
-            <input type="text" id="name" name="name" required placeholder="Your full name" />
-        </div>
+    <div id="form-section">
+        <h2 id="form-heading">📋 Request Your Free Consultation</h2>
 
-        <div class="form-group">
-            <label for="business">Business Name</label>
-            <input type="text" id="business" name="business" placeholder="Your business name" />
-        </div>
+        <form action="https://formspree.io/f/xeajwvbo" method="POST">
+            
+            <div class="form-group">
+                <label for="name">Full Name *</label>
+                <input type="text" id="name" name="name" required placeholder="Your full name" />
+            </div>
 
-        <div class="form-group">
-            <label for="phone">Phone Number *</label>
-            <input type="tel" id="phone" name="phone" required placeholder="(123) 456-7890" />
-        </div>
+            <div class="form-group">
+                <label for="business">Business Name</label>
+                <input type="text" id="business" name="business" placeholder="Your business name" />
+            </div>
 
-        <div class="form-group">
-            <label for="email">Email Address *</label>
-            <input type="email" id="email" name="email" required placeholder="you@example.com" />
-        </div>
+            <div class="form-group">
+                <label for="phone">Phone Number *</label>
+                <input type="tel" id="phone" name="phone" required placeholder="(123) 456-7890" />
+            </div>
 
-        <div class="form-group">
-            <label for="service">Select a Service</label>
-            <select id="service" name="service">
-                <option value="">-- Please choose a service --</option>
-                <option value="complimentary-web-analysis">Complimentary Web Analysis</option>
-                <option value="complimentary-demo-landing-page">Complimentary Demo Landing Page for Lead Generation</option>
-                <option value="custom-phone-application">Custom Phone Application</option>
-                <option value="virtual-receptionist">Virtual Receptionist</option>
-                <option value="social-media-management">Social Media Management</option>
-                <option value="complimentary-website-state-compliance-audit">Complimentary Website State Compliance Audit</option>
-            </select>
-        </div>
+            <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" required placeholder="you@example.com" />
+            </div>
 
-        <div class="form-group">
-            <label for="message">Additional Details</label>
-            <textarea id="message" name="message" placeholder="Tell us more about what you're looking for..."></textarea>
-        </div>
+            <div class="form-group">
+                <label for="service">Select a Service</label>
+                <select id="service" name="service">
+                    <option value="">-- Please choose a service --</option>
+                    <option value="complimentary-web-analysis">Complimentary Web Analysis</option>
+                    <option value="complimentary-demo-landing-page">Complimentary Demo Landing Page for Lead Generation</option>
+                    <option value="custom-phone-application">Custom Phone Application</option>
+                    <option value="virtual-receptionist">Virtual Receptionist</option>
+                    <option value="social-media-management">Social Media Management</option>
+                    <option value="complimentary-website-state-compliance-audit">Complimentary Website State Compliance Audit</option>
+                </select>
+            </div>
 
-        <!-- Hidden field to prevent spam (optional but recommended) -->
-        <input type="text" name="_gotcha" style="display:none" />
+            <div class="form-group">
+                <label for="message">Additional Details</label>
+                <textarea id="message" name="message" placeholder="Tell us more about what you're looking for..."></textarea>
+            </div>
 
-        <button type="submit" class="btn-form-submit">📤 Submit Request</button>
-        
-        <div class="form-footer">
-            We'll get back to you within 24 hours. Your information is safe with us.
-        </div>
-    </form>
+            <input type="text" name="_gotcha" style="display:none" />
 
-    <!-- ===== FOOTER ===== -->
+            <button type="submit" class="btn-form-submit">📤 Submit Request</button>
+            
+            <div class="form-footer">
+                We'll get back to you within 24 hours. Your information is safe with us.
+            </div>
+        </form>
+    </div>
+
     <div class="footer-divider"></div>
-
-
 
 </div>
 
-<!-- ===== FORMSPREE AJAX INTEGRATION ===== -->
 <script>
-    // This adds AJAX functionality to your form for a smoother experience
     (function() {
         const form = document.querySelector('form[action="https://formspree.io/f/xeajwvbo"]');
+        if (!form) return;
+        
         const submitBtn = form.querySelector('button[type="submit"]');
         const originalBtnText = submitBtn.textContent;
 
         form.addEventListener('submit', async function(e) {
             e.preventDefault();
             
-            // Disable button and show loading state
             submitBtn.disabled = true;
             submitBtn.textContent = '⏳ Sending...';
             
@@ -328,7 +403,6 @@ h<!DOCTYPE html>
                 });
                 
                 if (response.ok) {
-                    // Success!
                     form.innerHTML = `
                         <div style="text-align: center; padding: 30px 20px;">
                             <h2 style="color: #0f9d58; font-size: 1.8rem;">✅ Thank You!</h2>
@@ -351,6 +425,24 @@ h<!DOCTYPE html>
             }
         });
     })();
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const scrollBtn = document.querySelector('a[href="#form-heading"]');
+        if (scrollBtn) {
+            scrollBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector('#form-heading');
+                if (target) {
+                    const offset = 30;
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        }
+    });
 </script>
 
 </body>
