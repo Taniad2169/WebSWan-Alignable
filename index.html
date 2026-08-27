@@ -124,6 +124,7 @@
         .btn-google    { background-color: #4285f4; }
         .btn-submit    { background-color: #0f9d58; }
         .btn-compliance { background-color: #e91e63; }
+        .btn-alignable { background-color: #00897b; }
 
         .form-group {
             margin-bottom: 16px;
@@ -308,6 +309,10 @@
         The WebSwan Google Review
     </a>
 
+    <a href="https://www.alignable.com/biz/recommendations/accepted" target="_blank" class="btn btn-alignable">
+        ⭐ Recommendations from Peers
+    </a>
+
     <a href="https://taniad2169.github.io/WebSWan-Review/" target="_blank" class="btn btn-submit">
         click here to submit your review
     </a>
@@ -324,7 +329,7 @@
         <h2 id="form-heading">📋 Request Your Free Consultation</h2>
 
         <form action="https://formspree.io/f/xeajwvbo" method="POST">
-            
+
             <div class="form-group">
                 <label for="name">Full Name *</label>
                 <input type="text" id="name" name="name" required placeholder="Your full name" />
@@ -366,7 +371,7 @@
             <input type="text" name="_gotcha" style="display:none" />
 
             <button type="submit" class="btn-form-submit">📤 Submit Request</button>
-            
+
             <div class="form-footer">
                 We'll get back to you within 24 hours. Your information is safe with us.
             </div>
@@ -381,18 +386,18 @@
     (function() {
         const form = document.querySelector('form[action="https://formspree.io/f/xeajwvbo"]');
         if (!form) return;
-        
+
         const submitBtn = form.querySelector('button[type="submit"]');
         const originalBtnText = submitBtn.textContent;
 
         form.addEventListener('submit', async function(e) {
             e.preventDefault();
-            
+
             submitBtn.disabled = true;
             submitBtn.textContent = '⏳ Sending...';
-            
+
             const formData = new FormData(form);
-            
+
             try {
                 const response = await fetch(form.action, {
                     method: 'POST',
@@ -401,7 +406,7 @@
                         'Accept': 'application/json'
                     }
                 });
-                
+
                 if (response.ok) {
                     form.innerHTML = `
                         <div style="text-align: center; padding: 30px 20px;">
