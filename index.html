@@ -248,6 +248,53 @@
             }
         }
 
+        /* Loading State - Skeleton Placeholders */
+        .container.loading .btn {
+            background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+            background-size: 200% 100%;
+            animation: skeleton-pulse 1.5s infinite;
+            color: transparent;
+            cursor: default;
+            pointer-events: none;
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container.loading .btn:hover {
+            transform: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .container.loading .btn-scroll-form {
+            background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+            background-size: 200% 100%;
+            animation: skeleton-pulse 1.5s infinite;
+            color: transparent;
+            cursor: default;
+            pointer-events: none;
+            min-height: 44px;
+        }
+
+        .container.loading .btn-scroll-form:hover {
+            transform: none;
+        }
+
+        .container.loading #form-section,
+        .container.loading h2 {
+            display: none;
+        }
+
+        @keyframes skeleton-pulse {
+            0% {
+                background-position: 200% 0;
+            }
+            100% {
+                background-position: -200% 0;
+            }
+        }
+
         @media (max-width: 480px) {
             body {
                 padding-top: 250px;
@@ -383,6 +430,54 @@
 </div>
 
 <script>
+    // Loading State Management
+    (function() {
+        const container = document.querySelector('.container');
+
+        // Add loading class immediately
+        container.classList.add('loading');
+
+        // Remove loading state once page is fully loaded
+        function removeLoadingState() {
+            container.classList.remove('loading');
+        }
+
+        // Remove loading when page is fully loaded
+        if (document.readyState === 'loading') {
+            window.addEventListener('load', removeLoadingState);
+        } else {
+            // If DOMContentLoaded already fired, remove immediately with a small delay for images
+            setTimeout(removeLoadingState, 800);
+        }
+
+        // Also remove on all images loaded
+        const images = document.querySelectorAll('img');
+        if (images.length > 0) {
+            let loadedCount = 0;
+            images.forEach(img => {
+                if (img.complete) {
+                    loadedCount++;
+                } else {
+                    img.addEventListener('load', () => {
+                        loadedCount++;
+                        if (loadedCount === images.length) {
+                            removeLoadingState();
+                        }
+                    });
+                    img.addEventListener('error', () => {
+                        loadedCount++;
+                        if (loadedCount === images.length) {
+                            removeLoadingState();
+                        }
+                    });
+                }
+            });
+            if (loadedCount === images.length) {
+                setTimeout(removeLoadingState, 300);
+            }
+        }
+    })();
+
     (function() {
         const form = document.querySelector('form[action="https://formspree.io/f/xeajwvbo"]');
         if (!form) return;
