@@ -1,548 +1,547 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The WebSwan</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The WebSwan</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        html {
-            scroll-behavior: smooth;
-            overflow-y: scroll; /* Forces scrollbar to always show so content doesn't shift */
-        }
+    html {
+      scroll-behavior: smooth;
+      overflow-y: scroll;
+    }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #2895d4;
-            background-image: url('https://d14tal8bchn59o.cloudfront.net/-696pBr9qonZ33hIBhissnKH8xlsnK3-cWKBVd__e4U/w:1920/plain/https://02f0a56ef46d93f03c90-22ac5f107621879d5667e0d7ed595bdb.ssl.cf2.rackcdn.com/sites/98993/photos/23391472/WSLogo-Photoroom_original.png');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-blend-mode: overlay;
-            min-height: 100vh;
-            padding-top: 350px;
-            padding-bottom: 50px;
-            padding-left: 20px;
-            padding-right: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-        }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #2895d4;
+      background-image: url('https://d14tal8bchn59o.cloudfront.net/-696pBr9qonZ33hIBhissnKH8xlsnK3-cWKBVd__e4U/w:1920/plain/https://02f0a56ef46d93f03c90-22ac5f107621879d5667e0d7ed595bdb.ssl.cf2.rackcdn.com/sites/98993/photos/23391472/WSLogo-Photoroom_original.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-blend-mode: overlay;
+      min-height: 100vh;
+      padding-top: 350px;
+      padding-bottom: 50px;
+      padding-left: 20px;
+      padding-right: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
 
-        .container {
-            background: rgba(255, 255, 255, 0.95);
-            padding: 40px 35px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            text-align: center;
-            max-width: 620px;
-            width: 100%;
-            margin: 0 auto;
-            position: relative;
-        }
+    .container {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 40px 35px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      max-width: 620px;
+      width: 100%;
+      margin: 0 auto;
+      position: relative;
+    }
 
-        .logo {
-            max-width: 180px;
-            margin-bottom: 10px;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
+    .logo {
+      max-width: 180px;
+      margin-bottom: 10px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
 
-        h1 {
-            color: #2895d4;
-            margin-bottom: 20px;
-            font-size: 1.8rem;
-        }
+    h1 {
+      color: #2895d4;
+      margin-bottom: 20px;
+      font-size: 1.8rem;
+    }
 
-        h2 {
-            color: #2895d4;
-            margin: 25px 0 18px 0;
-            font-size: 1.4rem;
-            border-top: 2px solid #e8e8e8;
-            padding-top: 22px;
-        }
+    h2 {
+      color: #2895d4;
+      margin: 25px 0 18px 0;
+      font-size: 1.4rem;
+      border-top: 2px solid #e8e8e8;
+      padding-top: 22px;
+    }
 
-        .btn-scroll-form {
-            background: linear-gradient(135deg, #2895d4, #1a6b9e);
-            color: white;
-            padding: 14px 18px;
-            margin: 10px 0 8px 0;
-            border: none;
-            border-radius: 10px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            text-decoration: none;
-            text-align: center;
-            display: block;
-            width: 100%;
-            transition: all 0.25s ease;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
-        }
+    .btn-scroll-form {
+      background: linear-gradient(135deg, #2895d4, #1a6b9e);
+      color: white;
+      padding: 14px 18px;
+      margin: 10px 0 8px 0;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      text-align: center;
+      display: block;
+      width: 100%;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    }
 
-        .btn-scroll-form:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
-            background: linear-gradient(135deg, #1a6b9e, #0f4a6e);
-        }
+    .btn-scroll-form:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+      background: linear-gradient(135deg, #1a6b9e, #0f4a6e);
+    }
 
-        .btn {
-            display: block;
-            width: 100%;
-            padding: 13px 16px;
-            margin: 7px 0;
-            border: none;
-            border-radius: 10px;
-            font-size: 0.95rem;
-            font-weight: 600;
-            cursor: pointer;
-            text-decoration: none;
-            text-align: center;
-            color: #fff;
-            transition: all 0.25s ease;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
-        }
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 13px 16px;
+      margin: 7px 0;
+      border: none;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      text-align: center;
+      color: #fff;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    }
 
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
-        }
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+    }
 
-        .btn-portfolio { background-color: #1e88e5; }
-        .btn-growth    { background-color: #ff9800; }
-        .btn-say       { background-color: #9c27b0; }
-        .btn-ranking   { background-color: #2895d4; }
-        .btn-yelp      { background-color: #d32323; }
-        .btn-yahoo     { background-color: #6001d2; }
-        .btn-google    { background-color: #4285f4; }
-        .btn-submit    { background-color: #0f9d58; }
-        .btn-compliance { background-color: #e91e63; }
-        .btn-alignable { background-color: #00897b; }
+    .btn-portfolio { background-color: #1e88e5; }
+    .btn-growth    { background-color: #ff9800; }
+    .btn-say       { background-color: #9c27b0; }
+    .btn-ranking   { background-color: #2895d4; }
+    .btn-yelp      { background-color: #d32323; }
+    .btn-yahoo     { background-color: #6001d2; }
+    .btn-google    { background-color: #4285f4; }
+    .btn-submit    { background-color: #0f9d58; }
+    .btn-compliance { background-color: #e91e63; }
+    .btn-alignable { background-color: #00897b; }
+    .btn-website   { background-color: #0d47a1; } 
 
-        .form-group {
-            margin-bottom: 16px;
-            text-align: left;
-        }
+    .form-group {
+      margin-bottom: 16px;
+      text-align: left;
+    }
 
-        .form-group label {
-            display: block;
-            font-weight: 600;
-            color: #333;
-            margin-bottom: 4px;
-            font-size: 0.9rem;
-        }
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 4px;
+      font-size: 0.9rem;
+    }
 
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 11px 14px;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            font-size: 0.95rem;
-            font-family: inherit;
-            transition: border-color 0.3s ease;
-            background: #fff;
-        }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 11px 14px;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-family: inherit;
+      transition: border-color 0.3s ease;
+      background: #fff;
+    }
 
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #2895d4;
-            box-shadow: 0 0 0 3px rgba(40, 149, 212, 0.1);
-        }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #2895d4;
+      box-shadow: 0 0 0 3px rgba(40, 149, 212, 0.1);
+    }
 
-        .form-group textarea {
-            resize: vertical;
-            min-height: 70px;
-        }
+    .form-group textarea {
+      resize: vertical;
+      min-height: 70px;
+    }
 
-        .form-group select {
-            cursor: pointer;
-            appearance: none;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23333' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: right 12px center;
-            padding-right: 35px;
-        }
+    .form-group select {
+      cursor: pointer;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23333' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      padding-right: 35px;
+    }
 
-        .btn-form-submit {
-            background-color: #0f9d58;
-            width: 100%;
-            padding: 14px 18px;
-            margin-top: 8px;
-            border: none;
-            border-radius: 10px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            text-align: center;
-            color: #fff;
-            transition: all 0.25s ease;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
-        }
+    .btn-form-submit {
+      background-color: #0f9d58;
+      width: 100%;
+      padding: 14px 18px;
+      margin-top: 8px;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: center;
+      color: #fff;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    }
 
-        .btn-form-submit:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
-            background-color: #0b7a45;
-        }
+    .btn-form-submit:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+      background-color: #0b7a45;
+    }
 
-        .btn-form-submit:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-            transform: none !important;
-        }
+    .btn-form-submit:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none !important;
+    }
 
-        .form-footer {
-            margin-top: 16px;
-            font-size: 0.8rem;
-            color: #666;
-        }
+    .form-footer {
+      margin-top: 16px;
+      font-size: 0.8rem;
+      color: #666;
+    }
 
-        .footer-divider {
-            margin: 25px 0 5px 0;
-            border-top: 2px solid #e8e8e8;
-        }
+    .footer-divider {
+      margin: 25px 0 5px 0;
+      border-top: 2px solid #e8e8e8;
+    }
 
-        /* Hide scrollbar but keep scrolling */
-        .container::-webkit-scrollbar {
-            display: none;
-        }
+    .container::-webkit-scrollbar {
+      display: none;
+    }
 
-        @media (max-width: 1024px) {
-            body {
-                padding-top: 320px;
-            }
-        }
+    @media (max-width: 1024px) {
+      body {
+        padding-top: 320px;
+      }
+    }
 
-        @media (max-width: 768px) {
-            body {
-                padding-top: 280px;
-                padding-left: 15px;
-                padding-right: 15px;
-            }
-            .container {
-                padding: 30px 20px;
-            }
-            .logo {
-                max-width: 150px;
-            }
-            h1 {
-                font-size: 1.5rem;
-            }
-            h2 {
-                font-size: 1.2rem;
-            }
-            .btn {
-                font-size: 0.85rem;
-                padding: 12px 14px;
-            }
-        }
+    @media (max-width: 768px) {
+      body {
+        padding-top: 280px;
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+      .container {
+        padding: 30px 20px;
+      }
+      .logo {
+        max-width: 150px;
+      }
+      h1 {
+        font-size: 1.5rem;
+      }
+      h2 {
+        font-size: 1.2rem;
+      }
+      .btn {
+        font-size: 0.85rem;
+        padding: 12px 14px;
+      }
+    }
 
-        /* Loading State - Skeleton Placeholders */
-        .container.loading .btn {
-            background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
-            background-size: 200% 100%;
-            animation: skeleton-pulse 1.5s infinite;
-            color: transparent;
-            cursor: default;
-            pointer-events: none;
-            min-height: 44px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+    .container.loading .btn {
+      background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+      background-size: 200% 100%;
+      animation: skeleton-pulse 1.5s infinite;
+      color: transparent;
+      cursor: default;
+      pointer-events: none;
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-        .container.loading .btn:hover {
-            transform: none;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
-        }
+    .container.loading .btn:hover {
+      transform: none;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    }
 
-        .container.loading .btn-scroll-form {
-            background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
-            background-size: 200% 100%;
-            animation: skeleton-pulse 1.5s infinite;
-            color: transparent;
-            cursor: default;
-            pointer-events: none;
-            min-height: 44px;
-        }
+    .container.loading .btn-scroll-form {
+      background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+      background-size: 200% 100%;
+      animation: skeleton-pulse 1.5s infinite;
+      color: transparent;
+      cursor: default;
+      pointer-events: none;
+      min-height: 44px;
+    }
 
-        .container.loading .btn-scroll-form:hover {
-            transform: none;
-        }
+    .container.loading .btn-scroll-form:hover {
+      transform: none;
+    }
 
-        .container.loading #form-section,
-        .container.loading h2 {
-            display: none;
-        }
+    .container.loading #form-section,
+    .container.loading h2 {
+      display: none;
+    }
 
-        @keyframes skeleton-pulse {
-            0% {
-                background-position: 200% 0;
-            }
-            100% {
-                background-position: -200% 0;
-            }
-        }
+    @keyframes skeleton-pulse {
+      0% {
+        background-position: 200% 0;
+      }
+      100% {
+        background-position: -200% 0;
+      }
+    }
 
-        @media (max-width: 480px) {
-            body {
-                padding-top: 250px;
-                padding-left: 10px;
-                padding-right: 10px;
-            }
-            .container {
-                padding: 20px 15px;
-                border-radius: 15px;
-            }
-            .logo {
-                max-width: 120px;
-            }
-            h1 {
-                font-size: 1.3rem;
-            }
-            h2 {
-                font-size: 1.1rem;
-            }
-        }
-    </style>
+    @media (max-width: 480px) {
+      body {
+        padding-top: 250px;
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+      .container {
+        padding: 20px 15px;
+        border-radius: 15px;
+      }
+      .logo {
+        max-width: 120px;
+      }
+      h1 {
+        font-size: 1.3rem;
+      }
+      h2 {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
 <div class="container">
 
-    <img src="https://d14tal8bchn59o.cloudfront.net/-696pBr9qonZ33hIBhissnKH8xlsnK3-cWKBVd__e4U/w:1920/plain/https://02f0a56ef46d93f03c90-22ac5f107621879d5667e0d7ed595bdb.ssl.cf2.rackcdn.com/sites/98993/photos/23391472/WSLogo-Photoroom_original.png"
-         alt="The WebSwan Logo" class="logo" />
-    <h1>The WebSwan</h1>
+  <img src="https://d14tal8bchn59o.cloudfront.net/-696pBr9qonZ33hIBhissnKH8xlsnK3-cWKBVd__e4U/w:1920/plain/https://02f0a56ef46d93f03c90-22ac5f107621879d5667e0d7ed595bdb.ssl.cf2.rackcdn.com/sites/98993/photos/23391472/WSLogo-Photoroom_original.png"
+       alt="The WebSwan Logo" class="logo" />
+  <h1>The WebSwan</h1>
 
-    <a href="https://taniad2169.github.io/WebSwan-Portfolio/" target="_blank" class="btn btn-portfolio">
-        The WebSwan Portfolio
-    </a>
+  <!-- New button: Visit My Website -->
+  <a href="https://www.thewebswan.com" target="_blank" class="btn btn-website">
+    🌐 Visit My Website
+  </a>
 
-    <a href="https://www.alignable.com/biz/recommendations/accepted" target="_blank" class="btn btn-alignable">
-        ⭐ Recommendations from Peers
-    </a>
+  <a href="https://taniad2169.github.io/WebSwan-Portfolio/" target="_blank" class="btn btn-portfolio">
+    The WebSwan Portfolio
+  </a>
 
-    <a href="https://www.google.com/search?q=what+is+said+about+the+webswan&oq=what+is+said+about+the+webswan&gs_lcrp=EgZjaHJvbWUqBggAEEUYOzIGCAAQRRg7MgcIARAAGO8FMgoIAhAAGIAEGKIEMgcIAxAAGO8FMgcIBBAAGO8FMgcIBRAAGO8F0gEINjQ1MGowajSoAgOwAgHxBarx_ocZ4aeY&sourceid=chrome&source=chrome.ob&ie=UTF-8"
-       target="_blank" class="btn btn-growth">
-        find out how the webswan can help your business grow
-    </a>
+  <a href="https://www.alignable.com/biz/recommendations/accepted" target="_blank" class="btn btn-alignable">
+    ⭐ Recommendations from Peers
+  </a>
 
-    <a href="https://www.google.com/search?q=what+are+people+saying+about+the+webswan&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIHCAEQIRiPAjIHCAIQIRiPAtIBCDgwNzdqMGo5qAIGsAIB8QWWtmlLcBosuw&sourceid=chrome&ie=UTF-8&fbs=ABfTbFVyMZGZf1hfvX9uKjN_-G8cqu7ocb7U6ah0xpkIrGMK4LpKPoHZrc4HVz9uOAATjT1g2XbMUNYTWk-OmYpiK--qLizoF5Vfe_ozYlUxaDSbKTolzeP6fvdnXhcHYbEdwKwihAtOtXaXzrJn9JYf6QZOMHnCuIavpvsLhpG8F5NaG9y1EUsfRjgcUxIQ_CGU2AvjDCda5s6nzrwZR_mb8S6R1JgOYg&aep=10&ntc=1&sxsrf=APpeQnssZJZ10CEV3f3mIwy0w-ZvXIEykA%3A1787467376086&mstk=AUtExfC2wrv-GsR3xGy-kHufFOKydSPrT52oEv7IvrFhkYRrUiynoroSm3sSaL_PbUBs9coSZ5RWI4yKEPvHCxQk82HSUwq2477_J8ns8py3ftSB7SL_KpU958rOl_HIdfcdm7dCVWeAmU6ZSp972J00NUf3Z5z4g01hEgTzA0cxTbSC9gBmPXbHHFSylbeSgnLzOEGH-qJmemx4mWoOFJqAnTDhoO7fumoOA1i9TMwgfVLXFUIlRM9loeewQSHDMijuNpGx1PNIWg7_-7BdFOO7qab_W--2WvQKuMWFetW0rLoFb39wSmBAy_WBo0sN6sTtYc0aLxHG5AEgH7o8jqAv-59nK_TlBoOTEWfteCgKVbDhueEaoy2fRWB2zL6ve4VdYku896V3li6uWTu5Wi1evynXAqRNXs181K0VBYwVy_2GvNtXV1fGdpIJ2hCnAwDEJbJCEmUpjgQ&aioh=3&csuir=1&cs=0&udm=50&atvm=2&mtid=dpaKau2XOoOx0PEPh9e76Ak"
-       target="_blank" class="btn btn-say">
-        what people say about The WebSwan
-    </a>
+  <a href="https://www.google.com/search?q=what+is+said+about+the+webswan&oq=what+is+said+about+the+webswan&gs_lcrp=EgZjaHJvbWUqBggAEEUYOzIGCAAQRRg7MgcIARAAGO8FMgoIAhAAGIAEGKIEMgcIAxAAGO8FMgcIBBAAGO8FMgcIBRAAGO8F0gEINjQ1MGowajSoAgOwAgHxBarx_ocZ4aeY&sourceid=chrome&source=chrome.ob&ie=UTF-8"
+     target="_blank" class="btn btn-growth">
+    find out how the webswan can help your business grow
+  </a>
 
-    <a href="https://www.designrush.com/agency/website-design-development/california/oakland" target="_blank" class="btn btn-ranking">
-        click here to view the top 20 web agencies ranking in california The WebSwan #2
-    </a>
+  <a href="https://www.google.com/search?q=what+are+people+saying+about+the+webswan&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIHCAEQIRiPAjIHCAIQIRiPAtIBCDgwNzdqMGo5qAIGsAIB8QWWtmlLcBosuw&sourceid=chrome&ie=UTF-8&fbs=ABfTbFVyMZGZf1hfvX9uKjN_-G8cqu7ocb7U6ah0xpkIrGMK4LpKPoHZrc4HVz9uOAATjT1g2XbMUNYTWk-OmYpiK--qLizoF5Vfe_ozYlUxaDSbKTolzeP6fvdnXhcHYbEdwKwihAtOtXaXzrJn9JYf6QZOMHnCuIavpvsLhpG8F5NaG9y1EUsfRjgcUxIQ_CGU2AvjDCda5s6nzrwZR_mb8S6R1JgOYg&aep=10&ntc=1&sxsrf=APpeQnssZJZ10CEV3f3mIwy0w-ZvXIEykA%3A1787467376086&mstk=AUtExfC2wrv-GsR3xGy-kHufFOKydSPrT52oEv7IvrFhkYRrUiynoroSm3sSaL_PbUBs9coSZ5RWI4yKEPvHCxQk82HSUwq2477_J8ns8py3ftSB7SL_KpU958rOl_HIdfcdm7dCVWeAmU6ZSp972J00NUf3Z5z4g01hEgTzA0cxTbSC9gBmPXbHHFSylbeSgnLzOEGH-qJmemx4mWoOFJqAnTDhoO7fumoOA1i9TMwgfVLXFUIlRM9loeewQSHDMijuNpGx1PNIWg7_-7BdFOO7qab_W--2WvQKuMWFetW0rLoFb39wSmBAy_WBo0sN6sTtYc0aLxHG5AEgH7o8jqAv-59nK_TlBoOTEWfteCgKVbDhueEaoy2fRWB2zL6ve4VdYku896V3li6uWTu5Wi1evynXAqRNXs181K0VBYwVy_2GvNtXV1fGdpIJ2hCnAwDEJbJCEmUpjgQ&aioh=3&csuir=1&cs=0&udm=50&atvm=2&mtid=dpaKau2XOoOx0PEPh9e76Ak"
+     target="_blank" class="btn btn-say">
+    what people say about The WebSwan
+  </a>
 
-    <a href="https://www.yelp.com/biz/the-webswan-emeryville" target="_blank" class="btn btn-yelp">
-        The WebSwan Yelp Review
-    </a>
+  <a href="https://www.designrush.com/agency/website-design-development/california/oakland" target="_blank" class="btn btn-ranking">
+    click here to view the top 20 web agencies ranking in california The WebSwan #2
+  </a>
 
-    <a href="https://local.yahoo.com/info-237436073-the-webswan-emeryville/" target="_blank" class="btn btn-yahoo">
-        The WebSwan Yahoo review
-    </a>
+  <a href="https://www.yelp.com/biz/the-webswan-emeryville" target="_blank" class="btn btn-yelp">
+    The WebSwan Yelp Review
+  </a>
 
-    <a href="https://www.google.com/maps/place//@32.352505,-100.0209822,4z/data=!3m1!4b1!4m3!3m2!1s0xa2370697717bde97:0xe12746ae08472f10!12e1?entry=ttu&g_ep=EgoyMDI2MDgxOS4wIKXMDSoASAFQAw%3D%3D"
-       target="_blank" class="btn btn-google">
-        The WebSwan Google Review
-    </a>
+  <a href="https://local.yahoo.com/info-237436073-the-webswan-emeryville/" target="_blank" class="btn btn-yahoo">
+    The WebSwan Yahoo review
+  </a>
 
-    <a href="https://taniad2169.github.io/WebSWan-Review/" target="_blank" class="btn btn-submit">
-        click here to submit your review
-    </a>
+  <a href="https://www.google.com/maps/place//@32.352505,-100.0209822,4z/data=!3m1!4b1!4m3!3m2!1s0xa2370697717bde97:0xe12746ae08472f10!12e1?entry=ttu&g_ep=EgoyMDI2MDgxOS4wIKXMDSoASAFQAw%3D%3D"
+     target="_blank" class="btn btn-google">
+    The WebSwan Google Review
+  </a>
 
-    <a href="https://taniad2169.github.io/WebSwan-Compliance-English-Spanish-Ad-Campaign/" target="_blank" class="btn btn-compliance">
-        🔍 Check Your Website State Compliance Here
-    </a>
+  <a href="https://taniad2169.github.io/WebSWan-Review/" target="_blank" class="btn btn-submit">
+    click here to submit your review
+  </a>
 
-    <a href="#form-heading" class="btn-scroll-form">
-        📝 Request Your Free Consultation
-    </a>
+  <a href="https://taniad2169.github.io/WebSwan-Compliance-English-Spanish-Ad-Campaign/" target="_blank" class="btn btn-compliance">
+    🔍 Check Your Website State Compliance Here
+  </a>
 
-    <div id="form-section">
-        <h2 id="form-heading">📋 Request Your Free Consultation</h2>
+  <a href="#form-heading" class="btn-scroll-form">
+    📝 Request Your Free Consultation
+  </a>
 
-        <form action="https://formspree.io/f/xeajwvbo" method="POST">
+  <div id="form-section">
+    <h2 id="form-heading">📋 Request Your Free Consultation</h2>
 
-            <div class="form-group">
-                <label for="name">Full Name *</label>
-                <input type="text" id="name" name="name" required placeholder="Your full name" />
-            </div>
+    <form action="https://formspree.io/f/xeajwvbo" method="POST">
 
-            <div class="form-group">
-                <label for="business">Business Name</label>
-                <input type="text" id="business" name="business" placeholder="Your business name" />
-            </div>
+      <div class="form-group">
+        <label for="name">Full Name *</label>
+        <input type="text" id="name" name="name" required placeholder="Your full name" />
+      </div>
 
-            <div class="form-group">
-                <label for="phone">Phone Number *</label>
-                <input type="tel" id="phone" name="phone" required placeholder="(123) 456-7890" />
-            </div>
+      <div class="form-group">
+        <label for="business">Business Name</label>
+        <input type="text" id="business" name="business" placeholder="Your business name" />
+      </div>
 
-            <div class="form-group">
-                <label for="email">Email Address *</label>
-                <input type="email" id="email" name="email" required placeholder="you@example.com" />
-            </div>
+      <div class="form-group">
+        <label for="phone">Phone Number *</label>
+        <input type="tel" id="phone" name="phone" required placeholder="(123) 456-7890" />
+      </div>
 
-            <div class="form-group">
-                <label for="service">Select a Service</label>
-                <select id="service" name="service">
-                    <option value="">-- Please choose a service --</option>
-                    <option value="complimentary-web-analysis">Complimentary Web Analysis</option>
-                    <option value="complimentary-demo-landing-page">Complimentary Demo Landing Page for Lead Generation</option>
-                    <option value="custom-phone-application">Custom Phone Application</option>
-                    <option value="virtual-receptionist">Virtual Receptionist</option>
-                    <option value="social-media-management">Social Media Management</option>
-                    <option value="complimentary-website-state-compliance-audit">Complimentary Website State Compliance Audit</option>
-                </select>
-            </div>
+      <div class="form-group">
+        <label for="email">Email Address *</label>
+        <input type="email" id="email" name="email" required placeholder="you@example.com" />
+      </div>
 
-            <div class="form-group">
-                <label for="message">Additional Details</label>
-                <textarea id="message" name="message" placeholder="Tell us more about what you're looking for..."></textarea>
-            </div>
+      <div class="form-group">
+        <label for="service">Select a Service</label>
+        <select id="service" name="service">
+          <option value="">-- Please choose a service --</option>
+          <option value="complimentary-web-analysis">Complimentary Web Analysis</option>
+          <option value="complimentary-demo-landing-page">Complimentary Demo Landing Page for Lead Generation</option>
+          <option value="custom-phone-application">Custom Phone Application</option>
+          <option value="virtual-receptionist">Virtual Receptionist</option>
+          <option value="social-media-management">Social Media Management</option>
+          <option value="complimentary-website-state-compliance-audit">Complimentary Website State Compliance Audit</option>
+        </select>
+      </div>
 
-            <input type="text" name="_gotcha" style="display:none" />
+      <div class="form-group">
+        <label for="message">Additional Details</label>
+        <textarea id="message" name="message" placeholder="Tell us more about what you're looking for..."></textarea>
+      </div>
 
-            <button type="submit" class="btn-form-submit">📤 Submit Request</button>
+      <input type="text" name="_gotcha" style="display:none" />
 
-            <div class="form-footer">
-                We'll get back to you within 24 hours. Your information is safe with us.
-            </div>
-        </form>
-    </div>
+      <button type="submit" class="btn-form-submit">📤 Submit Request</button>
 
-    <div class="footer-divider"></div>
+      <div class="form-footer">
+        We'll get back to you within 24 hours. Your information is safe with us.
+      </div>
+    </form>
+  </div>
+
+  <div class="footer-divider"></div>
 
 </div>
 
 <script>
-    // Loading State Management
-    (function() {
-        const container = document.querySelector('.container');
+  // Loading State Management
+  (function() {
+    const container = document.querySelector('.container');
 
-        // Add loading class immediately
-        container.classList.add('loading');
+    container.classList.add('loading');
 
-        // Remove loading state once page is fully loaded
-        function removeLoadingState() {
-            container.classList.remove('loading');
-        }
+    function removeLoadingState() {
+      container.classList.remove('loading');
+    }
 
-        // Remove loading when page is fully loaded
-        if (document.readyState === 'loading') {
-            window.addEventListener('load', removeLoadingState);
+    if (document.readyState === 'loading') {
+      window.addEventListener('load', removeLoadingState);
+    } else {
+      setTimeout(removeLoadingState, 800);
+    }
+
+    const images = document.querySelectorAll('img');
+    if (images.length > 0) {
+      let loadedCount = 0;
+      images.forEach(img => {
+        if (img.complete) {
+          loadedCount++;
         } else {
-            // If DOMContentLoaded already fired, remove immediately with a small delay for images
-            setTimeout(removeLoadingState, 800);
-        }
-
-        // Also remove on all images loaded
-        const images = document.querySelectorAll('img');
-        if (images.length > 0) {
-            let loadedCount = 0;
-            images.forEach(img => {
-                if (img.complete) {
-                    loadedCount++;
-                } else {
-                    img.addEventListener('load', () => {
-                        loadedCount++;
-                        if (loadedCount === images.length) {
-                            removeLoadingState();
-                        }
-                    });
-                    img.addEventListener('error', () => {
-                        loadedCount++;
-                        if (loadedCount === images.length) {
-                            removeLoadingState();
-                        }
-                    });
-                }
-            });
+          img.addEventListener('load', () => {
+            loadedCount++;
             if (loadedCount === images.length) {
-                setTimeout(removeLoadingState, 300);
+              removeLoadingState();
             }
+          });
+          img.addEventListener('error', () => {
+            loadedCount++;
+            if (loadedCount === images.length) {
+              removeLoadingState();
+            }
+          });
         }
-    })();
+      });
+      if (loadedCount === images.length) {
+        setTimeout(removeLoadingState, 300);
+      }
+    }
+  })();
 
-    (function() {
-        const form = document.querySelector('form[action="https://formspree.io/f/xeajwvbo"]');
-        if (!form) return;
+  (function() {
+    const form = document.querySelector('form[action="https://formspree.io/f/xeajwvbo"]');
+    if (!form) return;
 
-        const submitBtn = form.querySelector('button[type="submit"]');
-        const originalBtnText = submitBtn.textContent;
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalBtnText = submitBtn.textContent;
 
-        form.addEventListener('submit', async function(e) {
-            e.preventDefault();
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
 
-            submitBtn.disabled = true;
-            submitBtn.textContent = '⏳ Sending...';
+      submitBtn.disabled = true;
+      submitBtn.textContent = '⏳ Sending...';
 
-            const formData = new FormData(form);
+      const formData = new FormData(form);
 
-            try {
-                const response = await fetch(form.action, {
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                });
-
-                if (response.ok) {
-                    form.innerHTML = `
-                        <div style="text-align: center; padding: 30px 20px;">
-                            <h2 style="color: #0f9d58; font-size: 1.8rem;">✅ Thank You!</h2>
-                            <p style="font-size: 1.1rem; margin-top: 15px; color: #333;">
-                                Your message has been sent successfully.<br>
-                                We'll get back to you within 24 hours.
-                            </p>
-                            <p style="margin-top: 20px; color: #666;">
-                                🦢 — The WebSwan Team
-                            </p>
-                        </div>
-                    `;
-                } else {
-                    throw new Error('Form submission failed');
-                }
-            } catch (error) {
-                alert('Oops! Something went wrong. Please try again or email us directly at designs@thewebswan.com');
-                submitBtn.disabled = false;
-                submitBtn.textContent = originalBtnText;
-            }
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
         });
-    })();
 
-    document.addEventListener('DOMContentLoaded', function() {
-        const scrollBtn = document.querySelector('a[href="#form-heading"]');
-        if (scrollBtn) {
-            scrollBtn.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector('#form-heading');
-                if (target) {
-                    const offset = 30;
-                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
-                }
-            });
+        if (response.ok) {
+          form.innerHTML = `
+            <div style="text-align: center; padding: 30px 20px;">
+              <h2 style="color: #0f9d58; font-size: 1.8rem;">✅ Thank You!</h2>
+              <p style="font-size: 1.1rem; margin-top: 15px; color: #333;">
+                Your message has been sent successfully.<br>
+                We'll get back to you within 24 hours.
+              </p>
+              <p style="margin-top: 20px; color: #666;">
+                🦢 — The WebSwan Team
+              </p>
+            </div>
+          `;
+        } else {
+          throw new Error('Form submission failed');
         }
+      } catch (error) {
+        alert('Oops! Something went wrong. Please try again or email us directly at designs@thewebswan.com');
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalBtnText;
+      }
     });
+  })();
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const scrollBtn = document.querySelector('a[href="#form-heading"]');
+    if (scrollBtn) {
+      scrollBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector('#form-heading');
+        if (target) {
+          const offset = 30;
+          const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+        }
+      });
+    }
+  });
 </script>
 
 </body>
