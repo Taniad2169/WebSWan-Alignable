@@ -129,6 +129,8 @@
     .btn-copy      { background-color: #6c757d; }
     .btn-whatsapp  { background-color: #25D366; }
     .btn-sms       { background-color: #34a853; }
+    .btn-refer     { background-color: #e67e22; }
+    .btn-youtube   { background-color: #FF0000; }
 
     .share-row {
       display: flex;
@@ -151,6 +153,167 @@
       margin-top: 4px;
       min-height: 1.5em;
       font-weight: 500;
+    }
+
+    /* ===== REFERRAL SLIDE PANEL ===== */
+    .referral-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 2000;
+      justify-content: flex-end;
+    }
+
+    .referral-overlay.active {
+      display: flex;
+    }
+
+    .referral-panel {
+      background: #fff;
+      width: 100%;
+      max-width: 480px;
+      height: 100%;
+      overflow-y: auto;
+      padding: 40px 30px 30px 30px;
+      box-shadow: -10px 0 30px rgba(0, 0, 0, 0.3);
+      transform: translateX(100%);
+      transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+      position: relative;
+    }
+
+    .referral-overlay.active .referral-panel {
+      transform: translateX(0);
+    }
+
+    .referral-panel .close-btn {
+      position: absolute;
+      top: 16px;
+      right: 20px;
+      font-size: 2rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #888;
+      transition: 0.2s;
+      line-height: 1;
+    }
+
+    .referral-panel .close-btn:hover {
+      color: #333;
+      transform: rotate(90deg);
+    }
+
+    .referral-panel h2 {
+      color: #2895d4;
+      border-top: none;
+      padding-top: 0;
+      margin-top: 0;
+      margin-bottom: 20px;
+      font-size: 1.6rem;
+      text-align: center;
+    }
+
+    .referral-panel .form-group {
+      margin-bottom: 16px;
+      text-align: left;
+    }
+
+    .referral-panel .form-group label {
+      display: block;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 4px;
+      font-size: 0.9rem;
+    }
+
+    .referral-panel .form-group input,
+    .referral-panel .form-group textarea {
+      width: 100%;
+      padding: 11px 14px;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-family: inherit;
+      transition: border-color 0.3s ease;
+      background: #fff;
+    }
+
+    .referral-panel .form-group input:focus,
+    .referral-panel .form-group textarea:focus {
+      outline: none;
+      border-color: #2895d4;
+      box-shadow: 0 0 0 3px rgba(40, 149, 212, 0.1);
+    }
+
+    .referral-panel .form-group textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .referral-panel .form-divider {
+      border-top: 2px solid #e8e8e8;
+      margin: 20px 0 18px 0;
+    }
+
+    .referral-panel .form-divider span {
+      display: inline-block;
+      background: #fff;
+      padding: 0 12px;
+      position: relative;
+      top: -12px;
+      color: #888;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .referral-panel .btn-submit-referral {
+      background-color: #e67e22;
+      width: 100%;
+      padding: 14px 18px;
+      margin-top: 8px;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: center;
+      color: #fff;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .referral-panel .btn-submit-referral:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+      background-color: #d35400;
+    }
+
+    .referral-panel .btn-submit-referral:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none !important;
+    }
+
+    .referral-success {
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    .referral-success h2 {
+      color: #0f9d58;
+      font-size: 1.8rem;
+      border-top: none;
+      padding-top: 0;
+    }
+
+    .referral-success p {
+      font-size: 1.1rem;
+      margin-top: 15px;
+      color: #333;
     }
 
     /* SMS Modal */
@@ -356,6 +519,10 @@
         font-size: 0.75rem;
         padding: 10px 4px;
       }
+      .referral-panel {
+        padding: 30px 20px;
+        max-width: 100%;
+      }
     }
 
     @media (max-width: 480px) {
@@ -376,6 +543,9 @@
       }
       h2 {
         font-size: 1.1rem;
+      }
+      .referral-panel {
+        padding: 25px 16px;
       }
     }
 
@@ -436,6 +606,11 @@
     🌐 Visit My Website
   </a>
 
+  <!-- 🎥 YouTube Video -->
+  <a href="https://youtu.be/aHD0iD_BhgI" target="_blank" class="btn btn-youtube">
+    ▶️ Protect your Digital Asset
+  </a>
+
   <!-- 📋 Copy & Share section -->
   <button id="copyLinkBtn" class="btn btn-copy">📋 Copy this page link</button>
   <div id="copyFeedback" class="copy-feedback"></div>
@@ -445,18 +620,8 @@
     <button id="shareSmsBtn" class="btn btn-sms">📱 SMS</button>
   </div>
 
-  <!-- SMS Modal -->
-  <div id="smsModal" class="modal-overlay">
-    <div class="modal-box">
-      <h3>📱 Send via SMS</h3>
-      <p style="margin-bottom: 6px; color: #555; font-size: 0.95rem;">Enter the phone number:</p>
-      <input type="tel" id="smsPhoneInput" placeholder="+1 234 567 8900" />
-      <div class="modal-actions">
-        <button id="modalSendSms" class="btn-send-sms">Send</button>
-        <button id="modalCancelSms" class="btn-cancel-sms">Cancel</button>
-      </div>
-    </div>
-  </div>
+  <!-- REFERRAL BUTTON -->
+  <button id="openReferralBtn" class="btn btn-refer">🤝 Click Here to Refer</button>
 
   <!-- existing buttons -->
   <a href="https://taniad2169.github.io/WebSwan-Portfolio/" target="_blank" class="btn btn-portfolio">
@@ -563,6 +728,69 @@
 
 </div>
 
+<!-- ===== REFERRAL SLIDE PANEL ===== -->
+<div id="referralOverlay" class="referral-overlay">
+  <div class="referral-panel">
+    <button class="close-btn" id="closeReferralBtn">&times;</button>
+    <h2>🤝 Refer a Lead</h2>
+
+    <form id="referralForm" action="https://formspree.io/f/xjyvvkvn" method="POST">
+
+      <div class="form-group">
+        <label for="refLeadName">Lead Full Name *</label>
+        <input type="text" id="refLeadName" name="lead_name" required placeholder="Lead's full name" />
+      </div>
+
+      <div class="form-group">
+        <label for="refLeadPhone">Lead Phone Number *</label>
+        <input type="tel" id="refLeadPhone" name="lead_phone" required placeholder="(123) 456-7890" />
+      </div>
+
+      <div class="form-group">
+        <label for="refLeadBusiness">Lead Business Name</label>
+        <input type="text" id="refLeadBusiness" name="lead_business" placeholder="Business name" />
+      </div>
+
+      <div class="form-group">
+        <label for="refLeadComment">Comment / Details (max 300 words) *</label>
+        <textarea id="refLeadComment" name="lead_comment" required placeholder="Tell us about the lead and why you're referring them..." maxlength="1800"></textarea>
+        <div style="text-align:right; font-size:0.8rem; color:#888; margin-top:3px;">
+          <span id="wordCountRef">0</span> / 300 words
+        </div>
+      </div>
+
+      <div class="form-divider"><span>Referred By</span></div>
+
+      <div class="form-group">
+        <label for="refYourName">Your Full Name *</label>
+        <input type="text" id="refYourName" name="referred_by_name" required placeholder="Your full name" />
+      </div>
+
+      <div class="form-group">
+        <label for="refYourPhone">Your Phone Number *</label>
+        <input type="tel" id="refYourPhone" name="referred_by_phone" required placeholder="(123) 456-7890" />
+      </div>
+
+      <input type="text" name="_gotcha" style="display:none" />
+
+      <button type="submit" class="btn-submit-referral" id="referralSubmitBtn">📤 Submit Referral</button>
+    </form>
+  </div>
+</div>
+
+<!-- SMS Modal -->
+<div id="smsModal" class="modal-overlay">
+  <div class="modal-box">
+    <h3>📱 Send via SMS</h3>
+    <p style="margin-bottom: 6px; color: #555; font-size: 0.95rem;">Enter the phone number:</p>
+    <input type="tel" id="smsPhoneInput" placeholder="+1 234 567 8900" />
+    <div class="modal-actions">
+      <button id="modalSendSms" class="btn-send-sms">Send</button>
+      <button id="modalCancelSms" class="btn-cancel-sms">Cancel</button>
+    </div>
+  </div>
+</div>
+
 <script>
   (function() {
     // --- loading state ---
@@ -666,19 +894,16 @@
         alert('Please enter a phone number.');
         return;
       }
-      // basic sanitize: remove spaces, dashes, parentheses, plus at start is ok
       const raw = phone.replace(/[\s\-\(\)]/g, '');
       if (!raw.match(/^\+?\d{7,15}$/)) {
         alert('Please enter a valid phone number (e.g. +1234567890 or 1234567890)');
         return;
       }
-      // encode for SMS
       const smsUrl = `sms:${encodeURIComponent(raw)}?body=${pageTitle}%20${pageUrl}`;
       window.open(smsUrl, '_blank');
       closeSmsModal();
     });
 
-    // Enter key in input triggers send
     smsInput.addEventListener('keydown', function(e) {
       if (e.key === 'Enter') {
         e.preventDefault();
@@ -686,7 +911,95 @@
       }
     });
 
-    // --- form handler ---
+    // --- REFERRAL SLIDE PANEL ---
+    const overlay = document.getElementById('referralOverlay');
+    const openBtn = document.getElementById('openReferralBtn');
+    const closeBtn = document.getElementById('closeReferralBtn');
+    const referralForm = document.getElementById('referralForm');
+    const submitRefBtn = document.getElementById('referralSubmitBtn');
+
+    function openReferralPanel() {
+      overlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeReferralPanel() {
+      overlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    openBtn.addEventListener('click', openReferralPanel);
+    closeBtn.addEventListener('click', closeReferralPanel);
+
+    overlay.addEventListener('click', function(e) {
+      if (e.target === overlay) closeReferralPanel();
+    });
+
+    // Word counter for comment
+    const commentField = document.getElementById('refLeadComment');
+    const wordCountSpan = document.getElementById('wordCountRef');
+
+    commentField.addEventListener('input', function() {
+      const text = this.value.trim();
+      const words = text === '' ? 0 : text.split(/\s+/).length;
+      wordCountSpan.textContent = words;
+      if (words > 300) {
+        wordCountSpan.style.color = '#e74c3c';
+      } else {
+        wordCountSpan.style.color = '#888';
+      }
+    });
+
+    // Referral form submission
+    referralForm.addEventListener('submit', async function(e) {
+      e.preventDefault();
+
+      // Validate word count
+      const text = commentField.value.trim();
+      const words = text === '' ? 0 : text.split(/\s+/).length;
+      if (words > 300) {
+        alert('Comment exceeds 300 words. Please shorten your message.');
+        return;
+      }
+
+      submitRefBtn.disabled = true;
+      submitRefBtn.textContent = '⏳ Sending...';
+
+      const formData = new FormData(referralForm);
+
+      try {
+        const response = await fetch(referralForm.action, {
+          method: 'POST',
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+          referralForm.innerHTML = `
+            <div class="referral-success">
+              <h2>✅ Thank You!</h2>
+              <p>Your referral has been sent successfully.<br>We'll reach out to the lead shortly.</p>
+              <p style="margin-top: 20px; color: #666;">🦢 — The WebSwan Team</p>
+              <button onclick="location.reload()" style="margin-top:20px; padding:12px 30px; background:#2895d4; color:#fff; border:none; border-radius:10px; font-weight:600; cursor:pointer;">Close &amp; Continue</button>
+            </div>
+          `;
+          // Auto-close after 4 seconds
+          setTimeout(() => {
+            closeReferralPanel();
+            // Reload to reset form state after panel closes
+            setTimeout(() => location.reload(), 300);
+          }, 4000);
+        } else {
+          throw new Error('Submission failed');
+        }
+      } catch (error) {
+        alert('Oops! Something went wrong. Please try again or email us at designs@thewebswan.com');
+        submitRefBtn.disabled = false;
+        submitRefBtn.textContent = '📤 Submit Referral';
+      }
+    });
+
+    // --- main form handler ---
     const form = document.querySelector('form[action="https://formspree.io/f/xeajwvbo"]');
     if (form) {
       const submitBtn = form.querySelector('button[type="submit"]');
